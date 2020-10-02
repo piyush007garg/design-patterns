@@ -1,0 +1,22 @@
+public class ConsumerDemo {
+    public static void main(String[] args) {
+
+        // they are returning an element
+
+        List<String> list = new ArrayList<>();
+        list.add("piyush");
+        list.add("garg");
+
+        Consumer<String> c1 = (s) -> {
+            System.out.println("first name is "+s);
+        };
+
+        Consumer<String> c2 = (s) -> {
+            System.out.println("last name is "+s);
+        };
+
+        list.forEach(c1);
+
+
+    }
+}
