@@ -1,0 +1,26 @@
+public class SupplierDemo {
+
+    // there is no return type
+
+    private static final Supplier<WebDriver> chromeDriver =()->{
+        System.setProperty("webdriver.chrome.driver","");
+        return new ChromeDriver();
+    };
+
+    private static final Supplier<WebDriver> fireFoxDriver =()->{
+        System.setProperty("webdriver.chrome.driver","");
+        return new ChromeDriver();
+    };
+
+    private static final Map<String,Supplier<WebDriver>> MAP = new HashMap<>();
+
+    static{
+        MAP.put("chrome",chromeDriver);
+        MAP.put("firefox",fireFoxDriver);
+    }
+
+    public static WebDriver getDriver(String browser){
+        return MAP.get(browser).get();
+    }
+
+
