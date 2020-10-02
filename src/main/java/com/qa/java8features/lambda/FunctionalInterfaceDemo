@@ -1,0 +1,19 @@
+public class FunctionInterfaceDemo {
+
+    public static void main(String[] args) {
+        Function<Integer,Integer> stringIntegerFunction = (s)-> s+2;
+        Function<Integer,Integer> stringIntegerFunction1 = (s)-> s*s;
+
+        System.out.println(
+//                stringIntegerFunction.andThen(stringIntegerFunction1).apply("my name is")
+        );
+        System.out.println(
+//                stringIntegerFunction.apply("my name is")
+        );
+
+        System.out.println(
+                stringIntegerFunction.compose(stringIntegerFunction1).apply(8)
+        );
+
+    }
+}
