@@ -1,0 +1,15 @@
+public class PredicateDemo {
+
+    // return true or not
+    public static void main(String[] args) {
+
+
+        Predicate<Integer> pre1 = (n) -> n > 2;
+        Predicate<Integer> pre2 = (n) -> n < 10;
+
+        System.out.println(
+                pre1.and(pre2).test(5)
+
+        );
+
+}
